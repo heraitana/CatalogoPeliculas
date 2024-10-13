@@ -1,59 +1,68 @@
 # CatalogoPeliculas
 
-# Herencia
-// Clase Principal
-Catalogo
+## Descripción
+CatalogoPeliculas es un sistema de gestión de catálogos de películas que utiliza principios de programación orientada a objetos como herencia, polimorfismo, manejo de excepciones y colecciones.
 
-// Clase Base (Superclase) 
-Pelicula
+## Estructura del Proyecto
 
-// Clase Derivada (Subclase)
--Ficcion
--No Ficcion
+### Herencia
 
-// Clases Derivadas (Subclase)
-- De Ficcion:
-Accion
-Animacion
-Aventura
-Ciencia Ficcion
-Comedia
-Drama
-Fantasia
-Romance
-Terror
-Thriller
+- **Clase Principal:**
+  - `Catalogo`
 
-- De No Ficcion: 
-Biografia
-Docudrama
-Historica
-Reportaje
+- **Clase Base (Superclase):**
+  - `Pelicula`
 
-# Polimorfismo
-// Clase Abstract Advertencia
+- **Clases Derivadas (Subclase):**
+  - **De Ficción:**
+    - `Ficcion`
+      - `Accion`
+      - `Animacion`
+      - `Aventura`
+      - `CienciaFiccion`
+      - `Comedia`
+      - `Drama`
+      - `Fantasia`
+      - `Romance`
+      - `Terror`
+      - `Thriller`
+      
+  - **De No Ficción:**
+    - `NoFiccion`
+      - `Biografia`
+      - `Docudrama`
+      - `Historica`
+      - `Reportaje`
+
+### Polimorfismo
+
+- **Clase Abstracta:**
+  - `Advertencia`
+
+- **Uso del Polimorfismo en Clases Derivadas:**
+  - **Ficción:**
+    - `CienciaFiccion`
+    - `Romance`
+    - `Terror`
   
-Utiliza el polimorfismo en clases derivadas como:
-Ficcion:
-CienciaFiccion
-Romance
-Terror
+  - **No Ficción:**
+    - `Biografia`
+    - `Historica`
+    - `Reportaje`
 
-NoFiccion:
-Biografia
-Historica
-Reportaje
+> **Definición Abstract:** Promueve la reutilización de código y la organización.
 
-- Definición Abstract: Promueve la reutilización de código y la organización.
+### Excepciones
 
-# Excepciones
-// Clase Rutina
+- **Clase Rutina:** Manejo de excepciones utilizando bloques `try/catch` en cada método.
 
-Excepciones try/catch se encuentran en cada método.
+### Colecciones
 
-# Colecciones
-HashMap
-- Qué es: Un HashMap guarda pares de cosas, como una clave y un valor.
-- Rápido: Busca y guarda datos muy rápido.
-- Desordenado: No mantiene el orden de los elementos.
-- Acepta Null: Puede tener claves o valores que sean null.
+- **HashMap:**
+  - **Qué es:** Un HashMap guarda pares de claves y valores.
+  - **Rápido:** Busca y guarda datos de manera eficiente.
+  - **Desordenado:** No mantiene el orden de los elementos.
+  - **Acepta Null:** Puede contener claves o valores que sean `null`.
+
+## Contribuciones
+Las contribuciones son bienvenidas. Si deseas contribuir, por favor abre un issue o envía un pull request.
