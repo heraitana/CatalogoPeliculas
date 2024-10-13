@@ -8,8 +8,8 @@ Catalogo
 Pelicula
 
 // Clase Derivada (Subclase)
-Ficcion
-No Ficcion
+-Ficcion
+-No Ficcion
 
 // Clases Derivadas (Subclase)
 - De Ficcion:
