@@ -65,8 +65,9 @@ public class Rutina extends Exception {
   // Método para mostrar el catálogo completo de películas
   public static void mostrarCatalogo(HashMap<String, Pelicula> catalogo) {
     try {
+      System.out.println("Catálogo de películas: ");
       for (Pelicula pelicula : catalogo.values()) {
-        System.out.println("Catálogo de películas:" + pelicula.toString());
+        System.out.println(pelicula.toString());
       }
     } catch (NullPointerException e) {
       System.out.println("Error: " + e.getMessage());
