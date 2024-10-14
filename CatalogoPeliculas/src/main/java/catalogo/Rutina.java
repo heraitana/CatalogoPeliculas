@@ -102,7 +102,7 @@ public class Rutina extends Exception {
       null,
       "Digite el subgénero de la película: "
     );
-    
+
     Ficcion ficcion = new Ficcion(
       titulo,
       director,
@@ -125,7 +125,6 @@ public class Rutina extends Exception {
 
   // Método para mostrar el catálogo completo de películas
   public static void mostrarCatalogo(HashMap<String, Pelicula> catalogo) {
-
     StringBuilder sb = new StringBuilder();
     try {
       for (Pelicula pelicula : catalogo.values()) {
@@ -133,9 +132,10 @@ public class Rutina extends Exception {
       }
       JOptionPane.showMessageDialog(
         null,
-        "\n" + "Catálogo de Películas:" + "\n" + sb.toString(),
+        "Catálogo de Películas:" + "\n" + sb.toString(),
         "Catálogo",
-        JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.INFORMATION_MESSAGE
+      );
     } catch (NullPointerException e) {
       System.out.println("Error: " + e.getMessage());
     } catch (Exception e) {
@@ -155,14 +155,17 @@ public class Rutina extends Exception {
       for (Pelicula pelicula : catalogo.values()) {
         if (pelicula.getTitulo().equalsIgnoreCase(busquedaTitulo)) {
           if (!encontrado) {
-            JOptionPane.showConfirmDialog(null,"\n" + "Película encontrada:" + "\n");
+            JOptionPane.showMessageDialog(null, "Película encontrada:");
             encontrado = true;
           }
           JOptionPane.showMessageDialog(null, pelicula.toString());
-                }
+        }
       }
       if (!encontrado) {
-        JOptionPane.showMessageDialog(null, "\n" + "Película NO encontrada" + "\n" + JOptionPane.WARNING_MESSAGE);
+        JOptionPane.showMessageDialog(
+          null,
+          "Película NO encontrada" + JOptionPane.WARNING_MESSAGE
+        );
       }
     } catch (NullPointerException t) {
       System.out.println("Error: " + t.getMessage());
@@ -181,14 +184,17 @@ public class Rutina extends Exception {
       for (Pelicula pelicula : catalogo.values()) {
         if (pelicula.getDirector().equalsIgnoreCase(busquedaDirector)) {
           if (!encontrado) {
-            JOptionPane.showMessageDialog(null, "\n" + "Director(a) encontrad(a):" + "\n");
+            JOptionPane.showMessageDialog(null, "Director(a) encontrad(a): ");
             encontrado = true;
           }
           JOptionPane.showMessageDialog(null, pelicula.toString());
         }
       }
       if (!encontrado) {
-        JOptionPane.showMessageDialog(null, "No se encontraron películas por el director: " + busquedaDirector);
+        JOptionPane.showMessageDialog(
+          null,
+          "No se encontraron películas por el director: " + busquedaDirector
+        );
       }
     } catch (NoSuchElementException e) {
       System.out.println("Error: " + e.getMessage());
@@ -205,19 +211,22 @@ public class Rutina extends Exception {
   ) {
     boolean encontrado = false;
 
-
     try {
       for (Pelicula pelicula : catalogo.values()) {
         if (pelicula.getGenero().equalsIgnoreCase(busquedaGenero)) {
           if (!encontrado) {
-            JOptionPane.showMessageDialog(null, "Películas encontradas:" + "\n");
+            JOptionPane.showMessageDialog(
+              null,
+              "Películas encontradas:" + "\n"
+            );
             encontrado = true;
           }
           JOptionPane.showMessageDialog(null, pelicula.toString());
         }
       }
       if (!encontrado) {
-        JOptionPane.showMessageDialog(null,
+        JOptionPane.showMessageDialog(
+          null,
           "No se encontraron películas para el género: " + busquedaGenero
         );
       }
@@ -240,11 +249,15 @@ public class Rutina extends Exception {
           if (!encontrado) {
             encontrado = true;
           }
-          JOptionPane.showMessageDialog(null,"Películas encontradas:" + "\n" + pelicula.toString());
+          JOptionPane.showMessageDialog(
+            null,
+            "Películas encontradas:" + "\n" + pelicula.toString()
+          );
         }
       }
       if (!encontrado) {
-        JOptionPane.showMessageDialog(null, 
+        JOptionPane.showMessageDialog(
+          null,
           "No se encontraron películas para el género: " + busquedaSubGenero
         );
       }
@@ -257,4 +270,4 @@ public class Rutina extends Exception {
 }
 //Cambios
 // [ ] Agregar excepciones a los métodos restantes con try/catch
-// [ ] Agregar scrolldown para el catalogo/ mostrar catalogo 
+// [ ] Agregar scrolldown para el catalogo/ mostrar catalogo
