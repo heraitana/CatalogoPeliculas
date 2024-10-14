@@ -13,7 +13,7 @@ public class Catalogo {
 
     int opcionMenu = 0;
 
-    while (opcionMenu != 4) {
+    while (opcionMenu != 5) {
       String textoMenu =
         """
             === Menú del Catálogo de Películas ===
@@ -32,12 +32,15 @@ public class Catalogo {
           Rutina.peliculasPreAgregadas(catalogo);
           break;
         case 2:
-        JOptionPane.showMessageDialog(null,"Catalogo de Películas: ");
+          JOptionPane.showMessageDialog(null, "Catalogo de Películas: ");
 
           Rutina.mostrarCatalogo(catalogo);
           break;
         case 3:
-          JOptionPane.showMessageDialog(null,"Agregar Nuevas Película al Catálogo: ");
+          JOptionPane.showMessageDialog(
+            null,
+            "Agregar Nuevas Película al Catálogo: "
+          );
           Rutina.agregarAlCatalogo(catalogo);
           break;
         case 4:
@@ -70,45 +73,56 @@ public class Catalogo {
                 );
                 Rutina.buscarPorDirector(catalogo, busquedaDirector);
                 break;
-                case 3:
+              case 3:
                 // Opciones de géneros
-                String[] opcionesGenero = {
-                    "Ficción",
-                    "No Ficción"
-                  
-                };
-                
-                String busquedaGenero = (String) JOptionPane.showInputDialog(null, null, "Selecciona un genero: ", 
-                JOptionPane.QUESTION_MESSAGE, null, opcionesGenero, opcionesGenero[0]);
-            
+                String[] opcionesGenero = { "Ficción", "No Ficción" };
+
+                String busquedaGenero = (String) JOptionPane.showInputDialog(
+                  null,
+                  null,
+                  "Selecciona un genero: ",
+                  JOptionPane.QUESTION_MESSAGE,
+                  null,
+                  opcionesGenero,
+                  opcionesGenero[0]
+                );
+
                 Rutina.buscarPorGenero(catalogo, busquedaGenero);
                 break;
-            
-                case 4:
+              case 4:
                 String[] opcionesSubGenero = {
-                    "Acción",
-                    "Animación",
-                    "Aventura",
-                    "Ciencia Ficción",
-                    "Comedia",
-                    "Drama",
-                    "Fantasía",
-                    "Romance",
-                    "Terror",
-                    "Thriller",
-                    "Biografía",
-                    "Docudrama",
-                    "Histórica",
-                    "Reportaje"
+                  "Acción",
+                  "Animación",
+                  "Aventura",
+                  "Ciencia Ficción",
+                  "Comedia",
+                  "Drama",
+                  "Fantasía",
+                  "Romance",
+                  "Terror",
+                  "Thriller",
+                  "Biografía",
+                  "Docudrama",
+                  "Histórica",
+                  "Reportaje",
                 };
-                
-                String busquedaSubGenero = (String) JOptionPane.showInputDialog(null, null, "Selecciona un subgenero: ", 
-                JOptionPane.QUESTION_MESSAGE, null, opcionesSubGenero, opcionesSubGenero[0]);
-            
+
+                String busquedaSubGenero = (String) JOptionPane.showInputDialog(
+                  null,
+                  null,
+                  "Selecciona un subgenero: ",
+                  JOptionPane.QUESTION_MESSAGE,
+                  null,
+                  opcionesSubGenero,
+                  opcionesSubGenero[0]
+                );
                 Rutina.buscarPorSubGenero(catalogo, busquedaSubGenero);
                 break;
               case 5:
-                // Salir del submenú y volver al menú principal
+                JOptionPane.showMessageDialog(
+                  null,
+                  "Volviendo al menú principal..."
+                );
                 break;
               default:
                 JOptionPane.showMessageDialog(
@@ -132,10 +146,3 @@ public class Catalogo {
     scanner.close();
   }
 }
-// Preguntas
-// Scanner, uno por try, catch?
-// scan close - al final de todos los scanners o al final de cada uno?
-//----------------------------------------------------------------
-//Cambios
-//[x]Tipo a Género
-//[x]Agregar Subgénero
